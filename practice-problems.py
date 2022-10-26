@@ -1,10 +1,10 @@
-def find_short(s):
-    word_list = s.split(' ')
+def solution(s):
+    output = []
 
-    shortest = len(word_list[0])
+    for i in range(0, len(s), 2):
+        if i == len(s) - 1:
+            output.append(s[i] + '_')
+        else:
+            output.append(s[i] + s[i+1])
 
-    for word in word_list:
-        if len(word) < shortest:
-            shortest = len(word)
-
-    return shortest
+    return output
