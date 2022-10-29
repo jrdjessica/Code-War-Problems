@@ -1,13 +1,13 @@
-def spin_words(sentence):
-    output = []
+def narcissistic(value):
+    power = len(str(value))
 
-    words = sentence.split(' ')
+    string_val = str(value)
 
-    for word in words:
-        if len(word) < 5:
-            output.append(word)
-        else:
-            rev_letters = reversed(word)
-            output.append(''.join(rev_letters))
+    output = 0
 
-    return ' '.join(output)
+    for num in string_val:
+        output += int(num) ** power
+
+    if output == value:
+        return True
+    return False
