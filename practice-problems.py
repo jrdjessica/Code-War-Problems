@@ -1,10 +1,13 @@
-def solution(s):
+def spin_words(sentence):
     output = []
 
-    for i in range(0, len(s), 2):
-        if i == len(s) - 1:
-            output.append(s[i] + '_')
-        else:
-            output.append(s[i] + s[i+1])
+    words = sentence.split(' ')
 
-    return output
+    for word in words:
+        if len(word) < 5:
+            output.append(word)
+        else:
+            rev_letters = reversed(word)
+            output.append(''.join(rev_letters))
+
+    return ' '.join(output)
