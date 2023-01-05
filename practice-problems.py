@@ -1,13 +1,10 @@
-def narcissistic(value):
-    power = len(str(value))
+def solution(s):
+    output = ""
 
-    string_val = str(value)
+    for char in s:
+        if char.isupper():
+            output += " " + char
+        else:
+            output += char
 
-    output = 0
-
-    for num in string_val:
-        output += int(num) ** power
-
-    if output == value:
-        return True
-    return False
+    return output
