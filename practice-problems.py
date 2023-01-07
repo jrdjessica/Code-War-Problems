@@ -1,14 +1,13 @@
-class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        output = [[strs[0]]]
+def alphabet_position(text):
+    import string
 
-        for i in range(1, len(strs)):
-            for array in output:
-                if sorted(array[0]) == sorted(strs[i]):
-                    array.append(strs[i])
-                    break
-                elif array == output[-1]:
-                    output.append([strs[i]])
-                    break
+    output = []
+    alphabet = list(string.ascii_lowercase)
 
-        return output
+    for char in text:
+        if char.isalpha():
+            for i, letter in enumerate(alphabet):
+                if char.lower() == letter:
+                    output.append(str(i + 1))
+
+    return " ".join(output)
